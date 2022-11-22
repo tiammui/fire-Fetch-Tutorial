@@ -30,15 +30,15 @@ export function CreateForm({addNote}) {
   )
 }
 
-export function Note({note}){
-
+export function Note({note, deleteNote}){
   return(
     <li className="note">
       <h4>{note.title}</h4>
       <p>
         {note.body}
       </p>
-      <i>{note.date}</i>
+      <i>{note.date.toMillis()}</i>
+      <button onClick={()=>deleteNote(note.id)}> &times; </button>
     </li>
   )
 }
